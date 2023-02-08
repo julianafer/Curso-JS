@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: #ec3dc0;
+        }
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: radial-gradient(#ff00bf, #b418fd);
+            font: normal 13pt Arial;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        section {
+            background-color: white;
+            padding: 30px;
+            width: 58%;
+        }
+        #invisivel {
+            color: transparent;
+        }
+        #pais {
+            padding: 5px;
+            border: 1px solid #ec3dc0;
+        }
+        #verificar {
+            padding: 5px;
+            border: 1px solid #ec3dc0;
+            background: #ec3dc0;
+            color: white;
+        }
+        /* #verificar:hover {
+            background: #b418fd;
+            border: 1px solid #b418fd;
+        } */
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Nacionalidade</h2>
+        Insira seu país: <input type="text" id="pais">
+        <input id="verificar" type="button" value="Verificar" onclick="verificar()" onmouseout="sair()">
+        <div id="res" class="invisivel">
+            <p id="invisivel">invisivel</p>
+        </div>
+    </section>
+    <script>
+        function verificar() {
+            var btn = document.querySelector('input#verificar')
+            btn.style.background = '#b418fd'
+            btn.style.border = '1px solid #b418fd'
+
+            var inputPais = document.querySelector('input#pais')
+            var pais = inputPais.value.toUpperCase()
+            var res = document.querySelector('div#res')
+
+            if (pais === 'BRASIL') {
+                res.innerHTML = `<p>Você é <b>Brasileiro(a)</b>!</p>`
+            } else {
+                res.innerHTML = `<p>Você é <b>Estrangeiro(a)</b>!</p>`
+            }
+        }
+        function sair() {
+            var btn = document.querySelector('input#verificar')
+            btn.style.background = '#ec3dc0'
+            btn.style.border = '1px solid #ec3dc0'
+        }
+    </script>
+</body>
+</html>

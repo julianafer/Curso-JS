@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(116, 188, 252);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p>Resultado</p>
+    <p>Aprendendo a usar <b>DOM</b> em JS</p>
+    <div id="msg">Clicaaa</div>
+
+    <script>
+        // DOM → Document Object Model
+        // Árvore DOM (window - location/document/history) árvore hierarquica - child/parent
+        // document - html - head/body
+        
+        /* Posso acessar elementos por:
+        Marca → getElementsByTagName()
+        ID → getElementById()
+        Nome → getElementsByName()
+        Classe → getElementsByClassName()
+        Seletor → querySelector() ou querySelectorAll */
+
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[1]
+        var d = document.getElementById("msg")
+        p1.style.color = 'blue'
+        corpo.style.background = 'black'
+        d.style.background = 'red'
+        // document.write(p1.innerText)
+        document.write(`Está escrito assim: ${p1.innerHTML}`)
+        d.innerText = 'Meia noite eu te conto'
+
+        var div = document.querySelector('div#msg')
+        div.style.color = 'black'
+    </script>
+</body>
+</html>
